@@ -4,6 +4,39 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" href="./CSS/styles.css">
+    <script>
+        var moving = false
+
+        function mouseOver() {
+            var player = document.getElementById("player");
+            var counter = 0;
+            if (moving == false) {
+                moving = true
+                var id = setInterval(frame, 144);
+            }
+
+            function frame() {
+                counter++;
+                if (counter > 3) {
+                    counter = 0;
+                }
+                switch (counter) {
+                    case 0:
+                        player.src = "./Game/Pcharacter/character_idle_0.png";
+                        break;
+                    case 1:
+                        player.src = "./Game/Pcharacter/character_idle_1.png";
+                        break;
+                    case 2:
+                        player.src = "./Game/Pcharacter/character_idle_2.png";
+                        break;
+                    case 3:
+                        player.src = "./Game/Pcharacter/character_idle_3.png";
+                        break;
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -15,10 +48,12 @@
                 <li class="mystuff"><a href="https://www.linkedin.com/in/jingchun-qu-59b8b0197?trk=people-guest_people_search-card" style="text-decoration: none;">LinkedIn</a></li>
             </ul>
         </div>
-        <div class="grid-item profpic"><img src="./Images/ProfilePic.jpg" alt="ProfilePic"></div>
+        <div class="grid-item profpicdiv">
+            <img src="./Images/ProfilePic.jpg" alt="ProfilePic" class="profimg">
+        </div>
 
 
-        <div class="grid-item descript">
+        <div class="grid-item descript" id="descript">
             <h2>Hello... I am</h2>
             <p>A double major in Computer Science and Math major from Texas A&M Graduating in May 2020. I'm well-versed in Object Oriented Programming languages and Analytics from College projects and Internships. I started out as a Biology Major but soon
                 found out I didn't have the stomach for the labs which led me to do a 180 and do what I was always passionate about which was to work with Computers - beautiful, solid un-fleshy things. I'm well-versed in Object Oriented Programming languages
@@ -46,7 +81,14 @@
                     study, I helped the machine learning methods and did the data analysis using the InterVar software.
                 </li>
             </ul>
+            <!--<p style="text-align: center;">click the little man</p>-->
         </div>
+        <div style="margin: 0 auto;">
+            <a href="./secret-page.html"><img src="./Game/Pcharacter/character_idle_0.png" alt="Player" id="player" onmouseover="mouseOver()"></a>
+
+        </div>
+
+
     </div>
 </body>
 

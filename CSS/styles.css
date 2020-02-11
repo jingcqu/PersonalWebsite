@@ -1,4 +1,4 @@
-img {
+.profimg {
     border-style: groove;
     border-radius: 100%;
     display: block;
@@ -24,8 +24,9 @@ body {
     font-size: 80px
 }
 
-.profpic {
+.profpicdiv {
     background-image: url("../Images/trees-and-bushes.png");
+    position: relative;
 }
 
 .grid-container {
@@ -41,6 +42,8 @@ body {
     margin: 0 auto;
     background-color: white;
 }
+
+.im-wrapper {}
 
 * {
     font-family: "Avantgarde", TeX Gyre Adventor, URW Gothic L, sans-serif;
